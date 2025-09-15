@@ -1,0 +1,14 @@
+
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Green circular background -->
+  <circle cx="50" cy="50" r="50" fill="#1DB954"/>
+
+  <!-- Black play button with rounded edges using a path -->
+  <path d="M42 35 
+           Q42 33, 44 34 
+           L66 48 
+           Q68 50, 66 52 
+           L44 66 
+           Q42 67, 42 65 
+           Z" fill="black"/>
+</svg>

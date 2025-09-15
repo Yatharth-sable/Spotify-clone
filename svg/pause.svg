@@ -1,0 +1,18 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="pauseGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4facfe" />
+      <stop offset="100%" stop-color="#00f2fe" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <!-- Circular background with gradient and shadow -->
+  <circle cx="60" cy="60" r="50" fill="url(#pauseGradient)" filter="url(#shadow)" />
+
+  <!-- Pause bars with rounded corners -->
+  <rect x="45" y="35" width="12" height="50" rx="4" ry="4" fill="white" />
+  <rect x="63" y="35" width="12" height="50" rx="4" ry="4" fill="white" />
+</svg>

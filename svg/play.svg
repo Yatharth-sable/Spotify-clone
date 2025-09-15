@@ -1,0 +1,17 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="playGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4facfe" />
+      <stop offset="100%" stop-color="#00f2fe" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <!-- Circular background with gradient and shadow -->
+  <circle cx="60" cy="60" r="50" fill="url(#playGradient)" filter="url(#shadow)" />
+
+  <!-- Play triangle with rounded corners using a path instead of polygon -->
+  <path d="M52,43 Q50,45 50,47 V73 Q50,75 52,77 Q54,79 57,77 L78,63 Q80,61 78,59 L57,45 Q54,43 52,43 Z" fill="white" />
+</svg>

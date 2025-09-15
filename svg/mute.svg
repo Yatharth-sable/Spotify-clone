@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 512 512">
+  <!-- Speaker -->
+  <path d="M192 176H96v160h96l128 96V80z"/>
+  <!-- Mute "X" -->
+  <line x1="368" y1="176" x2="464" y2="336" stroke="#000" stroke-width="32" stroke-linecap="round"/>
+  <line x1="464" y1="176" x2="368" y2="336" stroke="#000" stroke-width="32" stroke-linecap="round"/>
+</svg>
