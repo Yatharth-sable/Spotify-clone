@@ -4,6 +4,7 @@ let currentsong = new Audio();
 let songs;
 let currFolder;
 
+
 function secondsToMinutesSeconds(seconds) {
   if (isNaN(seconds) || seconds < 0) {
     return "00:00";
@@ -13,10 +14,11 @@ function secondsToMinutesSeconds(seconds) {
   return `${minutes}:${remainingSeconds < 10 ? "0" : ""}${remainingSeconds}`;
 }
 
+
 // ✅ get all songs of a folder
 async function getsongs(folder) {
   currFolder = folder;
-  let response = await fetch(`./${folder}/`);
+  let response = await fetch(`/${folder}/`);
   let text = await response.text();
   let div = document.createElement("div");
   div.innerHTML = text;
@@ -68,7 +70,7 @@ const playmusic = (track, pause = false) => {
 };
 
 async function displayAlbums() {
-  let response = await fetch(`./songs/`);
+  let response = await fetch(`/songs/`);
   let text = await response.text();
   let div = document.createElement("div");
   div.innerHTML = text;
@@ -84,6 +86,7 @@ async function displayAlbums() {
     if (e.href.includes("/songs/") && !e.href.endsWith("/songs/")) {
       const parts = e.href.split("/").filter(Boolean);
       const folder = parts[parts.length - 1];
+      console.log("this is folder", folder)
 
       try {
         let a = await fetch(`/songs/${folder}/info.json`);
@@ -93,7 +96,7 @@ async function displayAlbums() {
           <div data-folder="${folder}" class="card">
             <div class="play">
            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 512 512">
-            <!-- Green Circle -->5
+            <!-- Green Circle -->
             <circle cx="256" cy="256" r="256" fill="#1db954"/>
             <!-- Play Icon -->
             <path d="M200 150v212l160-106z" fill="#000"/>
