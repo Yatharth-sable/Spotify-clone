@@ -1,14 +1,16 @@
 {
-  "title": "Skull",
-  "description": "Ai hai bhai Ai",
+  "title": "NCS Album",
+  "description": "Non-stop Chill",
+  "cover": "cover.jpg",
   "songs": [
-    "Aarambh hai prachand.mp3",
-    "Angreji Beat.mp3",
-    "Badtameez Dil.mp3",
-    "Bandeya.mp3",
-    "Chahu Main Ya Na .mp3",
+    "Monta Re Lootera 320 Kbps.mp3",
+    "Chahu Main Ya.mp3",
     "Dil Tu Jaan Tu.mp3",
+    "Mehfil-Mein-Teri.mp3",
     "power of boys.mp3",
-    "QATAL.mp3"
+    "QATAL.mp3",
+    "Shayad Love Aaj Kal.mp3",
+    "Tere Bina Na Guzara, Pehla Tere.mp3",
+    "Title Track Sayiaraa 320 Kbps.mp3"
   ]
 }

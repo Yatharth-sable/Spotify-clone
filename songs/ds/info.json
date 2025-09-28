@@ -1,14 +1,18 @@
 {
-  "title": "NCS Album",
-  "description": "Best of NCS songs",
+  "title": "DS Album",
+  "description": "Desi vibes",
+  "cover": "cover.jpg",
   "songs": [
-    "Aarambh hai prachand.mp3",
-    "Angreji Beat.mp3",
-    "Badtameez Dil.mp3",
-    "Bandeya.mp3",
-    "Chahu Main Ya Na .mp3",
-    "Dil Tu Jaan Tu.mp3",
-    "power of boys.mp3",
-    "QATAL.mp3"
+    "Anuv Jain X Lost Stories - Arz Kiya Hai (Coke Studio Bharat .mp3",
+    "Desh Mere Bhuj .mp3",
+    "Finding Her - Kushagra.mp3",
+    "finger-snap.mp3",
+    "For_A_Reason_1.mp3",
+    "Hai junoon kk.mp3",
+    "Ik Kudi.mp3",
+    "Jo Tum Mere Ho Anuv Jain 320 Kbps.mp3",
+    "Watan.mp3",
+    "Papa.mp3",
+    "Wavy - Karan Aujla.mp3"
   ]
 }
