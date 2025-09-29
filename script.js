@@ -11,10 +11,9 @@ function secondsToMinutesSeconds(seconds) {
   return `${minutes}:${remainingSeconds < 10 ? "0" : ""}${remainingSeconds}`;
 }
 
-// ✅ get all songs of a folder from info.json
+// get all songs of a folder from info.json
 async function getsongs(folder) {
   currFolder = folder;
-
   let response = await fetch(`/songs/${folder}/info.json`);
   let data = await response.json();
   songs = data.songs;
@@ -55,7 +54,7 @@ const playmusic = (track, pause = false) => {
   document.querySelector(".songtime").innerHTML = "00:00 / 00:00";
 };
 
-// ✅ Load albums from albums.json + each folder’s info.json
+// Load albums from albums.json + each folder’s info.json
 async function displayAlbums() {
   let response = await fetch("/albums.json");
   let albums = await response.json();
@@ -110,6 +109,21 @@ async function main() {
     }
   });
 
+  document.addEventListener("keydown", function (event) {
+  // Prevent page scrolling when spacebar is pressed
+  if (event.code === "Space") {
+    event.preventDefault();
+
+    if (currentsong.paused) {
+      play.src = "svg/pause.svg";
+      currentsong.play();
+    } else {
+      currentsong.pause();
+      play.src = "svg/play.svg";
+    }
+  }
+});
+
   // update time + seekbar
   currentsong.addEventListener("timeupdate", () => {
     document.querySelector(".songtime").innerHTML = `
@@ -137,7 +151,8 @@ async function main() {
 
   // prev button
   previous.addEventListener("click", () => {
-    let index = songs.indexOf(currentsong.src.split("/").slice(-1)[0]);
+      let currentFile = decodeURI(currentsong.src.split("/").pop());
+    let index = songs.indexOf(currentFile);
     if (index > 0) {
       playmusic(songs[index - 1]);
     }
@@ -145,11 +160,13 @@ async function main() {
 
   // next button
   next.addEventListener("click", () => {
-    let index = songs.indexOf(currentsong.src.split("/").slice(-1)[0]);
+   let currentFile = decodeURI(currentsong.src.split("/").pop());
+    let index = songs.indexOf(currentFile);
     if (index + 1 < songs.length) {
       playmusic(songs[index + 1]);
     }
   });
+
 
   // volume control
   document.querySelector(".range").getElementsByTagName("input")[0].addEventListener("change", (e) => {
