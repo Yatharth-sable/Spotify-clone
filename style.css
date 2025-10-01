@@ -24,6 +24,16 @@ body {
   width: 75vw;
 }
 
+  .name{
+  font-size: 5px;
+  color: #1f1e1e;
+  left:0 ;
+  display: flex;
+  justify-content: end;
+  margin-top: -15px;
+}
+
+
 .home ul li {
   display: flex;
   gap: 10px;
@@ -164,7 +174,7 @@ body {
 }
 
 .sign-btn {
-  background-color: rgba(128, 128, 128, 0.119);
+  background-color: #1f1e1e;
   color: rgb(179, 179, 179);
   font-weight: 500;
   font-size: 14px;
@@ -277,7 +287,7 @@ body {
 .seekbar {
   height: 2px;
   width: 98%;
-  border: 3px solid rgba(0, 54, 120, 0.614);
+  border: 2px solid rgba(0, 54, 120, 0.614);
   background-color: rgba(11, 184, 218, 0.799);
   position: absolute;
   bottom: 4px;
@@ -285,8 +295,8 @@ body {
 }
 
 .circle {
-  width: 13px;
-  height: 13px;
+  width: 12px;
+  height: 12px;
   border-radius: 12px;
   background-color: rgb(255, 255, 255);
   position: relative;
@@ -372,7 +382,9 @@ body {
   gap: 12px;
   cursor: pointer;
 }
-
+.volume img{
+  transition: all 2s;
+}
 .songinfo {
   font-weight: 100;
   color: rgb(255, 255, 255);
@@ -439,7 +451,7 @@ body {
   }
 
   .cardcontainer {
-    margin: 0px;
+    margin: 5px;
     justify-content: center;
   }
 
@@ -482,10 +494,11 @@ body {
 
 /* ----------- Tablets (<= 768px) ----------- */
 @media (max-width: 768px) {
+@media (max-width: 768px) {
   .left {
     position: fixed;
-    left: -120%;
     top: 0;
+    left: -100%;
     width: 280px;
     height: 100vh;
     z-index: 1000;
@@ -498,13 +511,16 @@ body {
     left: 0;
   }
 
+  /* ✅ Keep right side fixed */
+  .right {
+    width: 100%;
+    margin: 0;
+    position: relative;
+  }
+}
+
   .close {
     display: block;
-  }
-
-  .right {
-    width: 100vw;
-    margin: 0;
   }
 
   .hamburger {
@@ -535,15 +551,32 @@ body {
 /* ----------- Mobile Phones (<= 480px) ----------- */
 @media (max-width: 480px) {
   body {
-    font-size: 14px;
+    font-size: 12px;
   }
 
-  .header {
-    flex-direction: column;
+  .header {  
+    display: ;
+    flex-direction: row;
     align-items: center;
+    height: 80px;
+  }
+ .spotifyPlaylist{
+  padding: 10px;
+ }
+  .sp{
+    font-size: 20px;
     padding: 10px;
   }
 
+  .sign-btn {
+    
+  }
+  .buttons{
+    margin: -30px;
+  }
+.forward{
+  display: none;
+}
   .card {
     width: 90vw;
     margin: 10px auto;
@@ -557,7 +590,6 @@ body {
   }
 
   .timeVol {
-    flex-direction: column;
     gap: 10px;
   }
 
@@ -624,6 +656,12 @@ body {
     font-size: 12px;
   }
 
+  .songtime {
+  font-weight: 100;
+  color: rgba(188, 198, 196, 0.868);
+}
+
+
   .seekbar {
     width: 90%;
     height: 4px;
@@ -640,16 +678,117 @@ body {
 
   .controls img,
   .controls svg {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
   }
-}
-
-.name{
-  font-size: 5px;
+  
+  .name{
+  font-size: 2px;
   color: #1f1e1e;
   left:0 ;
   display: flex;
   justify-content: end;
   margin-top: -15px;
+}
+
+
+.range input {
+  cursor: pointer;
+  display: none;
+}
+
+.cardcontainer {
+  margin: 20px;
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  max-height: 60vh;
+}
+
+.songlist ul {
+  color: white;
+  padding: 0px 1px;
+}
+
+.songlist ul li {
+  list-style: decimal;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  padding-top: 22px 0;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 12px 2px;
+  margin: 10px 0;
+}
+
+.songlist ul li img {
+  width: 20px;
+  height: 20px;
+  padding-right:3px ;
+}
+
+.songlist {
+  height: 450px;
+  overflow-y: scroll;
+  scrollbar-width: none;       /* Firefox */
+}
+.songlist::-webkit-scrollbar { /* Chrome, Edge, Safari */
+  display: none;
+}
+
+.songlist .info {
+  font-size: 13px;
+  width: 150px
+}
+
+.playnow span{
+  display: none;
+}
+
+.heading {
+  gap: 15px;
+  display: flex;
+  width: 100%;
+  padding: 4px 5px;
+  padding-top: 15px;
+}
+
+#play {
+  width: 50px;
+  height: 50px;
+}
+
+#previous,
+#next {
+  filter: invert(1);
+  width: 25px;
+  padding-left: 2px ;
+}
+
+.seekbar {
+  height: 2px;
+  width: 98%;
+  border: 1px solid rgba(0, 54, 120, 0.614);
+  background-color: rgba(11, 184, 218, 0.799);
+  position: absolute;
+  bottom: 7px;
+  border-radius: 10px;
+}
+
+.circle {
+  width: 9px;
+  height: 9px;
+  border-radius: 12px;}
+  
+  .volume  img{
+    width: 20px;
+    height: 20px;
   }
+
+
+
+  
+}

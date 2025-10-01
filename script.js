@@ -22,12 +22,12 @@ async function getsongs(folder) {
   songUL.innerHTML = "";
 
   for (const song of songs) {
+    let songname = song.replace(".mp3","")
     songUL.innerHTML += `
-      <li>
+      <li data-file="${song}">
         <img class="invert" src="svg/music.svg" alt="">
         <div class="info">
-          <div>${song}</div>
-          <div>Unknown Artist</div>
+          <div>${songname}</div>
         </div>
         <div class="playnow">
           <span>Play Now</span>
@@ -39,7 +39,7 @@ async function getsongs(folder) {
   // attach click event to each song
   Array.from(document.querySelectorAll(".songlist li")).forEach((e) => {
     e.addEventListener("click", () => {
-      playmusic(e.querySelector(".info").firstElementChild.innerHTML.trim());
+      playmusic(e.dataset.file);
     });
   });
 }
@@ -50,7 +50,8 @@ const playmusic = (track, pause = false) => {
     currentsong.play();
     play.src = "svg/pause.svg";
   }
-  document.querySelector(".songinfo").innerHTML = decodeURI(track);
+  const removeMp3 = track.replace(".mp3","")
+  document.querySelector(".songinfo").innerHTML = decodeURI(removeMp3);
   document.querySelector(".songtime").innerHTML = "00:00 / 00:00";
 };
 
@@ -141,13 +142,25 @@ async function main() {
   });
 
   // hamburger menu
-  document.querySelector(".hamburger").addEventListener("click", () => {
+  document.querySelector(".hamburger").addEventListener("click", (e) => {
+     e.stopPropagation();
     document.querySelector(".left").style.left = "0";
   });
+
 
   document.querySelector(".close").addEventListener("click", () => {
     document.querySelector(".left").style.left = "-120%";
   });
+
+  // Close menu if click outside
+  document.addEventListener("click",(e) => {
+     const menu = document.querySelector(".left")
+     const hamburger = document.querySelector(".hamburger")
+
+     if (!menu.contains(e.target) && !hamburger.contains(e.target)) {
+        menu.style.left="-120%"
+     }
+  })
 
   // prev button
   previous.addEventListener("click", () => {
